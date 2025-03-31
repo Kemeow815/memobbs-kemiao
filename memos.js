@@ -441,7 +441,7 @@ function memoFollow(mode) {
           try {
             let pageKeys = item.urls.join(',');
             let siteName = item.site_name;
-            let response = await fetch(`${item.envId}/api/v2/stats/page_comment?page_keys=${pageKeys}&site_name=${siteName}`);
+            let response = await fetch(`${item.envId}/api/v2/memo/page_comment?page_keys=${pageKeys}&site_name=${siteName}`);
             if (!response.ok) {
               throw new Error(`Request failed`);
             }
@@ -748,7 +748,7 @@ async function getMemos(search) {
       if (!uLink.endsWith('/')) {
         uLink += '/';
       }
-      const fetchUrl = `${uLink}api/v1/stats?creatorId=${u.creatorId}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
+      const fetchUrl = `${uLink}api/v1/memo?creatorId=${u.creatorId}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
       return withTimeout(2000, fetch(fetchUrl)
         .then(response => {
           if (!response.ok) {
@@ -769,9 +769,9 @@ async function getMemos(search) {
       }
       if (matchedV1) {
         const filter = `creator=='users/${matchedMemo.creatorId}'&&visibilities==['PUBLIC']`
-        fetchUrl = `${uLink}api/v1/stats?pageSize=${limit}&filter=${encodeURIComponent(filter)}`
+        fetchUrl = `${uLink}api/v1/memo?pageSize=${limit}&filter=${encodeURIComponent(filter)}`
       }else{
-        fetchUrl = `${uLink}api/v1/stats?creatorId=${u.creatorId}&rowStatus=NORMAL&limit=${limit}`;
+        fetchUrl = `${uLink}api/v1/memo?creatorId=${u.creatorId}&rowStatus=NORMAL&limit=${limit}`;
       }
 
       const response = await withTimeout(2000, fetch(fetchUrl));
@@ -1131,23 +1131,23 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
     };
     let userMemoUrl;
     if(tag && (random == null || random == "" )){
-      userMemoUrl = `${link}api/v1/stats?creatorId=${id}&tag=${tag}&rowStatus=NORMAL&limit=10`;
+      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&tag=${tag}&rowStatus=NORMAL&limit=10`;
     }else if(search){
-      userMemoUrl = `${link}api/v1/stats?creatorId=${id}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
+      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
     }else if(mode == "NOPUBLIC"){
       userMemoUrl = `${link}api/v1/memo`;
     }else if(random){
       if(tag){
-        userMemoUrl = `${link}api/v1/stats?tag=${tag}&limit=1&offset=${random}`;
+        userMemoUrl = `${link}api/v1/memo?tag=${tag}&limit=1&offset=${random}`;
       }else{
-        userMemoUrl = `${link}api/v1/stats?&limit=1&offset=${random}`;
+        userMemoUrl = `${link}api/v1/memo?&limit=1&offset=${random}`;
       }
     }else{
       if (matchedV1) {
         const filter = `creator=='users/${id}'&&visibilities==['PUBLIC']`
-        userMemoUrl = `${link}api/v1/stats?pageSize=50&filter=${encodeURIComponent(filter)}`
+        userMemoUrl = `${link}api/v1/memo?pageSize=50&filter=${encodeURIComponent(filter)}`
       }else{
-        userMemoUrl = `${link}api/v1/stats?creatorId=${id}&limit=10`;
+        userMemoUrl = `${link}api/v1/memo?creatorId=${id}&limit=10`;
       }
     }
 
@@ -1170,7 +1170,7 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
           let oneDayTagCount = window.localStorage && window.localStorage.getItem("memos-oneday-count");
           if( oneDayTag !== null && oneDayTagCount !== null && !search ){
             let randomOneNum = Math.floor(Math.random() * oneDayTagCount)
-            let oneDayUrl = `${link}api/v1/stats?tag=${oneDayTag}&limit=1&offset=${randomOneNum}`
+            let oneDayUrl = `${link}api/v1/memo?tag=${oneDayTag}&limit=1&offset=${randomOneNum}`
             //console.log(oneDayUrl)
             try {
               let responseOne = await fetch(oneDayUrl,{
@@ -1699,9 +1699,9 @@ function getEditIcon() {
     nowTagText = document.querySelector(".memos-tagnow-name") || ''
     if(nowTagText){
       nowTag = nowTagText.textContent;
-      userMemoUrl= `${nowLink}api/v1/stats?tag=${nowTag}`
+      userMemoUrl= `${nowLink}api/v1/memo?tag=${nowTag}`
     }else{
-      userMemoUrl = `${nowLink}api/v1/memo/stats?creatorId=${nowId}`
+      userMemoUrl = `${nowLink}api/v1/memo/memo?creatorId=${nowId}`
     }
     if(!memosAllCount || nowTagText){
       try {
@@ -1741,7 +1741,7 @@ function getEditIcon() {
     if (oneDayNow == null ) {
       let nowTag = document.querySelector(".memos-tagnow-name").textContent
       let nowTagCount;
-      let nowTagUrl= `${nowLink}api/v1/stats?tag=${nowTag}`
+      let nowTagUrl= `${nowLink}api/v1/memo?tag=${nowTag}`
       try {
         let response = await fetch(nowTagUrl,{
             headers: {
@@ -2341,7 +2341,7 @@ async function sendToGemini(memosContent) {
 }
 
 async function getMemosForAI(){
-  let fetchUrl = `${nowLink}api/v1/stats?creatorId=${nowId}&limit=100`
+  let fetchUrl = `${nowLink}api/v1/memo?creatorId=${nowId}&limit=100`
   let response = await fetch(fetchUrl,{
     headers: {
       'Authorization': `Bearer ${memosOpenId}`,
