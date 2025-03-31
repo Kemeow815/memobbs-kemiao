@@ -12,12 +12,12 @@ var memosDom = document.querySelector(memosData.dom);
 let memoList
 var memoDefaultList = [
   {
-    "creatorName": "Ke Miao",
-    "website": "https://blog-v3.kemeow.top",
-    "link": "https://memos.xaox.cc",
-    "creatorId": "15",
-    "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-    "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
+    "creatorName": "林木木",
+    "website": "https://immmmm.com",
+    "link": "https://me.edui.fun",
+    "creatorId": "101",
+    "avatar": "https://gravatar.memobbs.app/avatar/ba83fa02fc4b2ba621514941307e21be?s=80",
+    "twikoo": "https://metk.edui.fun"
   },{
     "creatorName": "归臧",
     "website": "https://nuoea.com",
@@ -441,7 +441,7 @@ function memoFollow(mode) {
           try {
             let pageKeys = item.urls.join(',');
             let siteName = item.site_name;
-            let response = await fetch(`${item.envId}/api/v2/memo/page_comment?page_keys=${pageKeys}&site_name=${siteName}`);
+            let response = await fetch(`${item.envId}/api/v2/stats/page_comment?page_keys=${pageKeys}&site_name=${siteName}`);
             if (!response.ok) {
               throw new Error(`Request failed`);
             }
@@ -769,7 +769,7 @@ async function getMemos(search) {
       }
       if (matchedV1) {
         const filter = `creator=='users/${matchedMemo.creatorId}'&&visibilities==['PUBLIC']`
-        fetchUrl = `${uLink}api/v1/memo?pageSize=${limit}&filter=${encodeURIComponent(filter)}`
+        fetchUrl = `${uLink}api/v1/memos?pageSize=${limit}&filter=${encodeURIComponent(filter)}`
       }else{
         fetchUrl = `${uLink}api/v1/memo?creatorId=${u.creatorId}&rowStatus=NORMAL&limit=${limit}`;
       }
@@ -1131,7 +1131,7 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
     };
     let userMemoUrl;
     if(tag && (random == null || random == "" )){
-      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&tag=${tag}&rowStatus=NORMAL&limit=10`;
+      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&tag=${tag}&rowStatus=NORMAL&limit=50`;
     }else if(search){
       userMemoUrl = `${link}api/v1/memo?creatorId=${id}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
     }else if(mode == "NOPUBLIC"){
@@ -1145,9 +1145,9 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
     }else{
       if (matchedV1) {
         const filter = `creator=='users/${id}'&&visibilities==['PUBLIC']`
-        userMemoUrl = `${link}api/v1/memo?pageSize=50&filter=${encodeURIComponent(filter)}`
+        userMemoUrl = `${link}api/v1/memos?pageSize=50&filter=${encodeURIComponent(filter)}`
       }else{
-        userMemoUrl = `${link}api/v1/memo?creatorId=${id}&limit=10`;
+        userMemoUrl = `${link}api/v1/memo?creatorId=${id}&rowStatus=NORMAL&limit=50`;
       }
     }
 
@@ -1701,7 +1701,7 @@ function getEditIcon() {
       nowTag = nowTagText.textContent;
       userMemoUrl= `${nowLink}api/v1/memo?tag=${nowTag}`
     }else{
-      userMemoUrl = `${nowLink}api/v1/memo/memo?creatorId=${nowId}`
+      userMemoUrl = `${nowLink}api/v1/memo/stats?creatorId=${nowId}`
     }
     if(!memosAllCount || nowTagText){
       try {
