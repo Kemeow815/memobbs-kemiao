@@ -1131,9 +1131,9 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
     };
     let userMemoUrl;
     if(tag && (random == null || random == "" )){
-      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&tag=${tag}&rowStatus=NORMAL&limit=50`;
+      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&tag=${tag}&limit=10`;
     }else if(search){
-      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&content=${search}&rowStatus=NORMAL&limit=${limit}`;
+      userMemoUrl = `${link}api/v1/memo?creatorId=${id}&content=${search}&limit=${limit}`;
     }else if(mode == "NOPUBLIC"){
       userMemoUrl = `${link}api/v1/memo`;
     }else if(random){
@@ -1147,7 +1147,7 @@ async function getUserMemos(link,id,name,avatar,tag,search,mode,random) {
         const filter = `creator=='users/${id}'&&visibilities==['PUBLIC']`
         userMemoUrl = `${link}api/v1/memos?pageSize=50&filter=${encodeURIComponent(filter)}`
       }else{
-        userMemoUrl = `${link}api/v1/memo?creatorId=${id}&rowStatus=NORMAL&limit=50`;
+        userMemoUrl = `${link}api/v1/memo?creatorId=${id}&limit=10`;
       }
     }
 
