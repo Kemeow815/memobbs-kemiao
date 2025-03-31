@@ -1,119 +1,12 @@
 {
   "myMemoList" : [
     {
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-      "link": "https://memos.edinik.com",
-      "creatorId": "1",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-      "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://memos.imsun.org",
-    "creatorId" : "1",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-      "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://memos.elizen.me",
-    "creatorId" : "101",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-      "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link": "https://b.ihaihe.cn",
-    "creatorId": "1",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-      "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://me.chenplus.com",
-    "v1":"memos",
-    "creatorId" : "101",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
-      "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-    "creatorName": "wangyunzi",
-    "website" : "https://wangyunzi.com",
-    "link" : "https://s.dusays.com",
-    "creatorId" : "9",
-    "twikoo" : "https://twikoo.wangyunzi.com",
-    "avatar": "https://gravatar.memobbs.app/avatar/c1b204bab687a23c8b6d7c8de11c7c59?s=80"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://note.ysicing.net",
-    "creatorId" : "1",
-    "twikoo": "https://twikoo.wangyunzi.com",
-    "avatar": "https://gravatar.memobbs.app/avatar/c1b204bab687a23c8b6d7c8de11c7c59?s=80"
-  },{
-    "creatorName": "longkun",
-    "website" : "https://dusays.com",
-    "link" : "https://s.dusays.com",
-    "creatorId" : "62",
-    "avatar": "https://gravatar.memobbs.app/avatar/082dcea6f62ccf45a05244ce34bf4a96?s=80"
-  },{
-    "creatorName": "DemoChen",
-    "website" : "https://www.demochen.com",
-    "link" : "https://memos.elizen.me",
-    "creatorId" : "102",
-    "twikoo" : "https://pl.elizen.me",
-    "avatar": "https://gravatar.memobbs.app/avatar/cc9b8a642c62eef389cd2cc7770276c4?s=80"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://me.isolitude.cn",
-    "creatorId" : "1",
-    "artalk" : "https://artalk.isolitude.cn",
-    "artSite" : "自说自话王国",
-      "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://memos.eallion.com",
-    "v1": "memos",
-    "creatorId" : "101",
-    "avatar": "https://gravatar.memobbs.app/avatar/171e4c30959e8c077a6c58b958624b31?s=80"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://memos.wiki-power.com",
-    "v1":"memos",
-    "creatorId" : "1",
-    "avatar": "https://gravatar.memobbs.app/avatar/44218020ee434de43516c19f05c71593?s=80"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link": "https://memos.lxink.cn",
-    "v1":"memos",
-    "creatorId": "1",
-    "avatar": "https://gravatar.memobbs.app/avatar/3e9a1d339e79ce782f92d52bf9127ae1?size=80",
-    "twikoo": "https://twikoo.lxink.cn"
-  },{
-      "creatorName": "克喵",
-      "website": "https://blog-v3.kemeow.top",
-    "link" : "https://memos.nice2cu.cc",
-    "v1":"memos",
-    "creatorId" : "1",
-    "avatar": "https://gravatar.memobbs.app/avatar/f97a316ab16d2db014f66e4d62d2b624?s=80"
-  },{
-      "creatorName": "克喵",
-    "website": "https://cmsblog.cn",
-    "link": "https://memos.cmsblog.cn",
-    "v1": "memos",
-    "creatorId": "101",
-    "avatar": "https://thirdqq.qlogo.cn/g?b=sdk&nk=157104945&s=140"
-  },{
-      "creatorName": "克喵",
-    "website": "https://mybelife.com",
-    "link": "https://mybelife.com",
-    "v1": "memos",
-    "creatorId": "1",
-    "avatar": "https://mybelife.com/file/users/1/avatar"
+    "creatorName": "克喵",
+    "website": "https://blog-v3.kemeow.top",
+    "link": "https://memos.edinik.com",
+    "creatorId": "4",
+    "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
+    "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
   },{
     "creatorName": "克喵",
     "website": "https://blog-v3.kemeow.top",
@@ -121,14 +14,6 @@
     "creatorId": "15",
     "avatar": "https://cdn.jsdelivr.net/gh/kmfx/tuchuang@main/img/Kemeow815avatar.png",
     "twikoo": "https://twikoo-kemiao-memos.314926.xyz"
-  },{
-      "creatorName": "克喵",
-    "website": "https://xwoniu",
-    "link": "https://m.xwoniu.com",
-    "creatorId": "1",
-    "avatar": "https://gravatar.memobbs.app/avatar/6dbd4ced83699b94b2c2c59c33aaee40?s=80",
-    "artalk": "https://tk.xwoniu.com",
-    "artSite": "唠叨的蜗牛"
   }
 
 ]
